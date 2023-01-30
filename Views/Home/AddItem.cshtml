@@ -1,0 +1,58 @@
+﻿@using Pharmacy.Models
+@model item
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Assets/css/datepicker.css">
+    <link rel="stylesheet" href="~/Assets/css/style.css">
+    <title>Add Item</title>
+</head>
+<body style="background-image: url('/Assets/images/item.jpg'); background-repeat:no-repeat; background-size:100% 100%">
+    <form action="/Home/AddItem" method="get">
+        <div class="inner-layer">
+            <div class="container">
+                <div class="row no-margin">
+                    <div class="col-sm-7">
+                        <div class="content">
+                            <h1>Pharmacy</h1>
+                            <h4>Add Item</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-data">
+                            <div class="form-head">
+                                <h2>Item</h2>
+                            </div>
+                            <div class="form-body">
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Item name" name="New_Item" class="form-control">
+                                </div>
+
+
+                                <div class="row form-row">
+                                    <button class="btn btn-success btn-appointment">
+                                        Add Item
+                                    </button>
+                                </div>
+                                <div class="btn btn-success btn-appointment">
+                                    <a href="/home/Items" style="text-decoration: none"><p class="m-0" style="color:white" ;">BACK </p> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="~/Assets/js/jquery-3.3.1.min.js"></script>
+<script src="~/Assets/js/popper.min.js"></script>
+<script src="~/Assets/js/bootstrap.min.js"></script>
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+

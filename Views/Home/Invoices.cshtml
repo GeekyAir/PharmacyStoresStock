@@ -1,0 +1,73 @@
+﻿@using Pharmacy.Models
+@model List<invoice>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy</title>
+    <link rel="icon" href="~/Assets/imgs/Group 640.png" type="image/x-icon">
+    <!-- BootStarp CSS File -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Fontawesome CSS File -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="~/Assets/css/master.css">
+    <!-- Fontawesome Js File -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/js/all.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="userorderspage" style="background-image: url('/Assets/images/cc.jpg') !important; background-repeat:no-repeat; background-size:100% 100%">
+
+            <div class="m-auto" style="width: 95%;">
+                <p class="section-address" style="color:black">Invoice</p>
+                <div class="py-4 px-3 section">
+                    <div class="row table-head m-0 text-center">
+                        <div style="width: 11%;">
+                            <a href="/home/AddInvoice" style="text-decoration: none"><p class="m-0" style="color:darkblue" ;">Add Invoice </p> </a>
+                        </div>
+                        <div style="width: 11%;">
+                            <a href="/home/Index" style="text-decoration: none"><p class="m-0" style="color:darkblue" ;">Stores Stock </p> </a>
+                        </div>
+                        <div style="width: 11%;">
+                            <a href="/home/Items" style="text-decoration: none"><p class="m-0" style="color:darkblue" ;">Items </p> </a>
+                        </div>
+                        <div style="width: 11%;">
+                            <a href="/home/Stores" style="text-decoration: none"><p class="m-0" style="color:darkblue" ;">Stores </p> </a>
+                        </div>
+                    </div>
+                    <div class="row table-head m-0 text-center">
+                        <div style="width: 11%;">Invoice Number</div>
+                        <div style="width: 27%;">
+                            <div class="row flex-row text-center">
+                                <div style="width: 40%;">Store Name</div>
+                                <div style="width: 40%;">Item Name</div>
+                                <div style="width: 15%;">Date</div>
+
+                            </div>
+                        </div>
+                        <div style="width: 13%;">Quantity</div>
+                    </div>
+                    @foreach (var inv in Model)
+                    {
+                        <div class="row m-0 talabt-item text-center mb-3" id="userOrders-item-1">
+                            <div style="width: 11%;">@inv.invoiceNO</div>
+                            <div style="width: 11%;">@inv.store.store_name</div>
+                            <div style="width: 11%;">@inv.item.item_name</div>
+                            <div style="width: 9%;">
+                                <div class="align-self-center tahlilName" style="width: 10%;">@inv.date</div>
+                            </div>
+                            <div class="align-self-center tahlilName" style="width: 5%;color:red">@inv.quantity</div>
+
+                            <div class="text-start" style="width: 8%;">
+                                <a href="/home/DeleteInvoice?invoiceNO=@inv.invoiceNO"><p class="m-0" style="color: #D43E3E; text-decoration: underline #D43E3E;">DELETE <i class="fa-solid fa-square-xmark me-1"></i></p></a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BootStrap Js File -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

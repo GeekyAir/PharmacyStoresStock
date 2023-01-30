@@ -1,0 +1,89 @@
+﻿@using Pharmacy.Models
+@model Items_stores
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Assets/css/datepicker.css">
+    <link rel="stylesheet" href="~/Assets/css/style.css">
+    <title>Add Invoice</title>
+</head>
+<body style="background-image: url('/Assets/images/rec.jpeg'); background-repeat:no-repeat; background-size:100% 100%">
+    <form action="/Home/SaveInvoice" method="get">
+        <div class="inner-layer">
+            <div class="container">
+                <div class="row no-margin">
+                    <div class="col-sm-7">
+                        <div class="content">
+                            <h1>Pharmacy</h1>
+                            <h4>Add Invoice</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-data">
+                            <div class="form-head">
+                                <h2>New Invoice</h2>
+                            </div>
+                            <div class="form-body">
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Invoice Number" name="invoiceNO" class="form-control">
+                                </div>
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Date" name="date" class="form-control">
+                                </div>
+                                <div class="row form-row">
+                                    <select name="id_store" class="form-control">
+                                        <option value="" disabled selected>Stores</option>
+                                        @foreach (var store in Model.Stores)
+                                        {
+                                            <option value="@store.id">@store.store_name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="row form-row">
+                                <select name="id_item" class="form-control">
+                                    <option value="" disabled selected>Items</option>
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <option value="@item.id">@item.item_name</option>
+                                    }
+                                </select>
+                            </div>
+                                <div class="row form-row">
+                                    <input type="number" placeholder="Enter Quantity" name="quantity" class="form-control">
+                                </div>
+                                <div class="row form-row">
+                                    <button class="btn btn-success btn-appointment">
+                                        Add Invoice
+                                    </button>
+                                </div>
+                                <div class="btn btn-success btn-appointment">
+                                    <a href="/home/Index" style="text-decoration: none"><p class="m-0" style="color:white" ;">BACK </p> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="~/Assets/js/jquery-3.3.1.min.js"></script>
+<script src="~/Assets/js/popper.min.js"></script>
+<script src="~/Assets/js/bootstrap.min.js"></script>
+<script src="~/Assets/js/bootstrap-datepicker.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#dat").datepicker();
+    })
+</script>
+
+  </body>
+</html>
